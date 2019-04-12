@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Dev Blog', // Required
-  author: 'Nguyen Anh Tu', // Required
+  author: 'Personal blog by Nguyen Anh Tu', // Required
   description: 'Full-stack Web Developer',
   primaryColor: '#3498db', // Required
   showHeaderImage: true,
