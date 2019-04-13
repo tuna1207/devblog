@@ -9,7 +9,7 @@ module.exports = {
   social: {
     website: 'https://thetunatech.com',
     github: 'https://github.com/tunguyenbhtech',
-    twitter: 'https://twitter.com/ryanafitzgerald',
+    twitter: '',
     linkedin: 'https://www.linkedin.com/in/nguyen-anh-tu-1a171b123/',
   },
   pathPrefix: '/devblog',
