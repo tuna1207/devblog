@@ -10,7 +10,7 @@ import Link from './Link';
 import Wrapper from './Wrapper';
 
 function Header({ config }) {
-  const { author, description, social } = config;
+  const { author, description, social, email } = config;
 
   return (
     <Container>
@@ -20,6 +20,7 @@ function Header({ config }) {
         )}
         <H2><Link to="/">{author}</Link></H2>
         <P>{description}</P>
+        <P>{`Email: ${email}`}</P>
         {social &&
           <Social
             website={social.website}

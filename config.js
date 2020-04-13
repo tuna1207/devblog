@@ -8,6 +8,7 @@ module.exports = {
   postsPerPage: 5, // Required
   social: {
     website: 'https://thetuna.tech',
+    email: 'tunguyenanh@thetuna.tech',
     github: 'https://github.com/tunguyenbhtech',
     twitter: '',
     linkedin: 'https://www.linkedin.com/in/nguyen-anh-tu-1a171b123/',
