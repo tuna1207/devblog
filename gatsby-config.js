@@ -1,68 +1,86 @@
-const userConfig = require('./config');
+require(`dotenv`).config({
+  path: `.env`,
+})
+const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: userConfig.title,
-    author: userConfig.author,
-    description: userConfig.description,
-    siteUrl: userConfig.siteUrl,
+    // Used for the title template on pages other than the index site
+    siteTitle: `TuNA`,
+    // Default title of the page
+    siteTitleAlt: `TuNA Blog`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `TuNA Blog`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://thetuna.tech`,
+    // Used for SEO
+    siteDescription: `TuNA's Typography driven, feature-rich blogging with minimal aesthetics.`,
+    author: `TuNA`,
   },
-  pathPrefix: userConfig.pathPrefix,
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        excerpt_separator: `<!-- end -->`,
-        plugins: [
+        navigation: [
+          // {
+          //   title: `Blog`,
+          //   slug: `/blog`,
+          // },
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 700,
-              linkImagesToOriginal: false,
-              wrapperStyle: 'margin: 15px -30px !important',
-            },
+            title: `About`,
+            slug: `/about`,
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+            title: `Contact`,
+            slug: '/contact',
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
         ],
+        externalLinks: [
+          {
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/nguyen-anh-tu-1a171b123`,
+          },
+          {
+            name: `GitHub`,
+            url: `https://github.com/tunguyenbhtech`,
+          },
+        ],
+        showThemeAuthor: false,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
-    `gatsby-plugin-feed`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: userConfig.title,
-        short_name: userConfig.title,
-        start_url: userConfig.siteUrl,
-        background_color: '#fff',
-        theme_color: userConfig.primaryColor,
-        display: 'minimal-ui',
-        icon: 'src/main.jpg',
+        name: `tuna - blog`,
+        short_name: `minimal-blog`,
+        description: `TuNA's Typography driven, feature-rich blogging with minimal aesthetics.`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#6B46C1`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify`,
+    // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
-};
+}
