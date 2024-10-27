@@ -42,7 +42,7 @@ module.exports = {
           },
           {
             name: `GitHub`,
-            url: `https://github.com/tunguyenbhtech`,
+            url: `https://github.com/tuna1207`,
           },
         ],
         showThemeAuthor: false,
