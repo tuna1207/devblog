@@ -14,7 +14,7 @@ module.exports = {
     // Will be used to generate absolute URLs for og:image etc.
     siteUrl: `https://thetuna.tech`,
     // Used for SEO
-    siteDescription: `TuNA's Typography driven, feature-rich blogging with minimal aesthetics.`,
+    siteDescription: `Senior full-stack engineer & solution architect focused on authentication, identity, and Web3 wallet infrastructure.`,
     author: `TuNA`,
   },
   plugins: [
@@ -60,7 +60,7 @@ module.exports = {
       options: {
         name: `tuna - blog`,
         short_name: `minimal-blog`,
-        description: `TuNA's Typography driven, feature-rich blogging with minimal aesthetics.`,
+        description: `Senior full-stack engineer & solution architect focused on authentication, identity, and Web3 wallet infrastructure.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
