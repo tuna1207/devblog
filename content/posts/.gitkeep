@@ -1,0 +1,1 @@
+# Keep this directory. The blog theme sources it at build time and fails if it is missing.
